@@ -1,4 +1,5 @@
 import collections
+from collections import deque
 from random import choice
 
 Card = collections.namedtuple('Card',['rank','suit'])
@@ -78,3 +79,25 @@ rank_value = deck.ranks.index(mycard.rank)
 print(rank_value)
 sort_value = rank_value * len(suit_values) + suit_values[mycard.suit]
 print(sort_value)
+
+print('-------deque------------')
+
+dp = deque(range(10),maxlen=10)
+print(dp)
+dp.rotate(3)
+print(dp)
+dp.rotate(-3)
+print(dp)
+dp.appendleft(-1)
+print(dp)
+dp.append(20)
+print(dp)
+dp.extend([11,22,33])
+print(dp)
+dp.extendleft([77])
+print(dp)
+dp2 = deque(range(6),maxlen=6)
+print(dp2)
+#dp3 = deque(_,maxlen=16)
+dp3 = dp + dp2
+print(dp3)
